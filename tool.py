@@ -33,7 +33,7 @@ def apply_shihai(rolls, bonus, critical_value, absolute_domination_level=0):
 # --- Streamlit UI ---
 st.title("ダブルクロス3rd 支配の領域計算ツール")
 
-log = st.text_area("判定ログを入力してください")
+log = st.text_area("判定ログを入力してください  (例：(4DX7+5) ＞ 10[1,2,3,7]+10[7]+6[6]+5 ＞ 31) ")
 level = st.number_input("絶対支配Lv", min_value=0, step=1, value=0)
 
 if st.button("計算開始"):
@@ -42,4 +42,5 @@ if st.button("計算開始"):
         result = apply_shihai(rolls, bonus, critical_value, absolute_domination_level=level)
         st.success(f"最小達成値: {result}")
     else:
+
         st.warning("判定ログを入力してください。")
